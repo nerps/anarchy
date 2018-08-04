@@ -1,0 +1,173 @@
+.myContainer {
+    display: flex;
+    flex-direction: column;
+    /* background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-size: 100%; */
+    /* width: 1000px;
+    height: 1000px; */
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: smaller;
+}
+
+@media print {
+    div.selectize__menu {
+        display: none;
+    }
+    div.selectize__menu-toggle {
+        display: none;
+    }
+    input.selectize__textfield--no-selection {
+        display: none;
+    }
+}
+
+input::-moz-selection {
+    color: white;
+    background: lightgray;
+    -webkit-text-stroke: 2px white;
+    -webkit-text-fill-color: white;
+}
+  
+input::selection {
+    color: white;
+    background: lightgray;
+    -webkit-text-stroke: 2px white;
+    -webkit-text-fill-color: white;
+}
+
+div.row {
+    flex-direction: row;
+    display: flex;
+}
+
+div.col {
+    flex-direction: column;
+    display: flex;
+}
+div.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 25px;
+    font-weight: bold;
+}
+div.skills > div.col-4 {
+    height: 75px;
+    display: absolute;
+}
+.negative-value-invalid {
+    background-color: rgb(255, 52, 93);
+}
+.positive-value-invalid {
+    background-color: rgb(253, 158, 177);
+}
+.value-valid {
+    background-color: white;
+}
+div.skills > div.col-4 > div.skill-select {
+    width: 230px;
+    float: left;
+}
+div.skills > div.col-4 > div.skill-points {
+    margin: 5px 1px 0px 3px;
+    width: 40px;
+    float: left;
+}
+div.skills > div.col-4 > div.skill-points > input {
+    width: 40px;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: right;
+    height: 40px;
+    -webkit-text-stroke: 2px #000000;
+    -webkit-text-fill-color: #FFFFFF;
+}
+div.skills > div.col-4 > div.skill-attribute {
+    width: 20px;
+    float: left;
+    height: 40px;
+    font-size: 35px;
+    -webkit-text-stroke: 2px #000000;
+    -webkit-text-fill-color: #FFFFFF;
+}
+.nextToConfig {
+    padding-left: 250px;
+}
+.nameinput {
+    margin: 3px 50px 10px 20px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    height: 60px;
+    width: 550px;
+}
+.dispositions {
+    height: 125px;
+}
+.attributes {
+    margin: 20px 10px 30px 10px;
+    -webkit-text-stroke: 2px #000000;
+    -webkit-text-fill-color: #FFFFFF;
+}
+.attributeinput {
+    font-weight: bold;
+    font-size: 55px;
+    text-align: right;
+    height: 60px;
+    width: 80px;
+    margin: 0px 37px 0px 10px;
+}
+.attributeinput > input {
+    font-weight: bold;
+    font-size: 55px;
+    text-align: right;
+    height: 60px;
+    width: 80px;
+}
+.attributeinputInvalid > input {
+	background-color: rgb(255, 52, 93);
+}
+.myContainer > .config {
+    position: fixed;
+    width: 250px;
+    background-color: lightgoldenrodyellow;
+    z-index: 999;
+}
+.ampButton {
+    border: 2px solid #111;
+	border-radius: 5px;
+	font-size: smaller;
+	/* background-color: white; */
+	padding: 5px;
+	margin: 3px 0 3px 0;
+	align-items: center;
+	min-height: 6.3em;
+	display: flex;
+}
+.ampButton > div {
+	text-align: center;
+}
+.ampButton > div > div {
+	text-align: center;
+}
+.ampPoints {
+	border: 2px solid #111;
+	border-radius: 5px;
+	background-color: white;
+	padding: 0.1em 0.1em 0.1em 0.1em;
+	margin: 0 0 0 -1.5em;
+	width: 2em;
+	height: 2em;
+	align-items: center;
+	text-align: center;
+	font-weight: bolder;
+	flex: 0 0 auto;
+}
+.dispositionInput {
+	text-align: center;
+	width: 100%;
+}
+.dispositionInputContainer {
+	padding: 0 2em .2em 2em;
+}

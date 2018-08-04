@@ -1,0 +1,5 @@
+/elm-stuff
+/node_modules
+/src/*.bak
+/.vscode
+/src/bootstrap-4.0.0-beta.3-dist
