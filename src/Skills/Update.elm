@@ -7,7 +7,6 @@ import Skills.Types exposing (Skill, SkillSpec)
 import Skills.Init exposing (defaultSkill, initSkillSelectizeStateIfNecessary, initSkillSpecSelectizeStateIfNecessary)
 import Model exposing (Model)
 import Helpers exposing (strToMaybeInt)
-import Debug
 
 
 handleOnSkillPointsInputChanged : Model -> String -> String -> ( Model, Cmd Msg )
@@ -20,9 +19,6 @@ handleOnSkillPointsInputChanged model uid_skill strPoints =
 
         ( selectedSkill, selectedSpec, _ ) =
             skillFromUniqueID model.selectedSkills uid_skill
-
-        _ =
-            Debug.log "asdf" points
 
         maybeSelectedSpec =
             --use Nothing if no spec was selected

@@ -194,12 +194,6 @@ skillPointsSpent selectedSkills =
         skills =
             Dict.values selectedSkills
 
-        _ =
-            Debug.log "sumPoints" sumPoints
-
-        _ =
-            Debug.log "sumSpecs" sumSpecs
-
         sumPoints =
             skills
                 |> List.map (\( _, _, p ) -> p)

@@ -25,13 +25,9 @@ view currentGameLevel =
 
 radio : String -> Bool -> Msg -> Html Msg
 radio value checked msg =
-    let
-        _ =
-            Debug.log value checked
-    in
-        label
-            [ style [ ( "padding", "0 1em 0 0" ) ]
-            ]
-            [ input [ type_ "radio", name "gamelevel", Html.Attributes.checked checked, onClick msg ] []
-            , text value
-            ]
+    label
+        [ style [ ( "padding", "0 1em 0 0" ) ]
+        ]
+        [ input [ type_ "radio", name "gamelevel", Html.Attributes.checked checked, onClick msg ] []
+        , text value
+        ]

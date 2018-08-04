@@ -1,7 +1,7 @@
 module App.Url exposing (delta2url, location2messages)
 
 import RouteUrl exposing (RouteUrlProgram)
-import RouteUrl.Builder exposing (Builder, builder, query, replaceQuery, getQuery)
+import RouteUrl.Builder exposing (Builder, builder, query, replaceQuery, getQuery, newEntry, appendToPath)
 import Navigation exposing (Location)
 import Model exposing (Model)
 import Messages exposing (..)
@@ -67,8 +67,15 @@ delta2builder previous current =
         qualities =
             -- q1p, q2p, q3n
             Qualities.Url.state2query current.selectedQualities
+
+        {- _ =
+           Debug.log "hello" (builder |> newEntry |> appendToPath [ "anarchy" ])
+        -}
     in
         builder
+            |> newEntry
+            |> appendToPath [ "anarchy" ]
+            -- I want to use this subdirectory on nerps.github.io
             |> replaceQuery
                 (List.concat
                     [ name, metatype, attributes, weirdness, skills, knowledgeSkill, dispositions, cues, amps, qualities ]
