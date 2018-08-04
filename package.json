@@ -24,6 +24,7 @@
     "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
+    "install:elm": "npm i -g elm && elm package install",
     "build": "webpack",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 8080",
