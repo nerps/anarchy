@@ -1,16 +1,50 @@
 .myContainer {
     display: flex;
     flex-direction: column;
-    /* background-image: url('background.png');
-    background-repeat: no-repeat;
-    background-size: 100%; */
-    /* width: 1000px;
-    height: 1000px; */
     font-family: 'Arial Narrow Bold', sans-serif;
     font-size: smaller;
 }
 
+canvas {
+	border: 2px rgb(255, 47, 47) dashed;
+	/* position: absolute; */
+
+}
+body > div.A4 {
+	border: 2px rgb(2, 110, 2) dashed;
+	width: 1224px !important;
+	padding: 0;
+	margin: 0;
+}
+body  {
+	border: 2px rgb(144, 47, 255) dashed;
+}
+/* @page {
+	size: A4; /* DIN A4 standard, Europe *
+	margin: 0;
+} */
+/* body {
+	padding-top:15mm;
+} */
+
 @media print {
+	* {
+		-webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+		color-adjust: exact !important;  /*Firefox*/
+	}
+	/* @page {
+		size: A4; /* DIN A4 standard, Europe *
+		margin: 0;
+	}
+	html, body {
+        width: 210mm;
+        height: 282mm;
+	} */
+	/*
+    body {
+        padding-top: 15mm;
+    } */
+
     div.selectize__menu {
         display: none;
     }
@@ -19,6 +53,10 @@
     }
     input.selectize__textfield--no-selection {
         display: none;
+	}
+    .no-print, .no-print *
+    {
+        display: none !important;
     }
 }
 
@@ -102,11 +140,21 @@ div.skills > div.col-4 > div.skill-attribute {
     height: 60px;
     width: 550px;
 }
+div.attributeRow {
+	padding: 50px 40px 30px 260px;
+	border: 2px dashed magenta;
+}
+@media print {
+	input {
+		border: 0;
+		background: none;
+	}
+}
 .dispositions {
     height: 125px;
 }
 .attributes {
-    margin: 20px 10px 30px 10px;
+    /* margin: 20px 10px 30px 10px; */
     -webkit-text-stroke: 2px #000000;
     -webkit-text-fill-color: #FFFFFF;
 }
@@ -115,8 +163,9 @@ div.skills > div.col-4 > div.skill-attribute {
     font-size: 55px;
     text-align: right;
     height: 60px;
-    width: 80px;
-    margin: 0px 37px 0px 10px;
+	width: 80px;
+	flex: 1 1 auto;
+    /* margin: 0px 37px 0px 10px; */
 }
 .attributeinput > input {
     font-weight: bold;

@@ -22,7 +22,7 @@ import Armor.View
 
 view : Model -> Html Msg
 view model =
-    div [ class "container" ]
+    div [ class "container-fluid" ]
         [ --Html.node "link" [ Html.Attributes.rel "stylesheet", Html.Attributes.href "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", Html.Attributes.attribute "integrity" "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", Html.Attributes.attribute "crossorigin" "anonymous" ] []
           Amps.View.ampModalView model.modalUidAmp
             model.modalStateAmp
@@ -36,18 +36,9 @@ view model =
             model.selectedQualities
             model.selectizeMenuQuality
             model.weirdness
-        , div [ class "config" ]
-            [ GameLevel.View.view model.gameLevel
-            , Metatypes.View.metatypeChooser model.metatype
-            , Warnings.View.attributePointsToSpendHtml model.attributes model.gameLevel.attributePoints
-            , Warnings.View.skillPointsToSpendHtml model.selectedSkills (model.gameLevel.skillPoints + model.metatype.skillPointsModifier)
-            , Warnings.View.ampPointsToSpendHtml model.selectedAmps model.gameLevel.ampsPoints model.weirdness
-            , Warnings.View.skillDoesNotFitWeirdnessWarning model.selectedSkills model.weirdness
-            , Warnings.View.skillPointsValidHtml model.selectedSkills
-            , Warnings.View.skillSpecsValidHtml model.selectedSkills
-            ]
+        
         , div [ class "row", class "nextToConfig" ] [ div [ class "col" ] [ nameInput model.name ], div [ class "col" ] [ Weirdness.View.weirdnessInput model.weirdness ] ]
-        , div [ class "row", class "nextToConfig", class "attributes" ]
+        , div [ class "row", class "attributeRow", class "attributes" ]
             (Attributes.View.attributeInputs
                 model.metatype.attributeMaxima
                 model.metatype.attributeModifiers
@@ -78,6 +69,16 @@ view model =
                 , ConditionMonitor.View.conditionMonitorStun model.attributes model.metatype.attributeModifiers model.selectedQualities
                 ]
             , div [ class "col" ] [ text "GEAR/CONTACTS" ]
+            ]
+        , div [ class "config no-print" ]
+            [ GameLevel.View.view model.gameLevel
+            , Metatypes.View.metatypeChooser model.metatype
+            , Warnings.View.attributePointsToSpendHtml model.attributes model.gameLevel.attributePoints
+            , Warnings.View.skillPointsToSpendHtml model.selectedSkills (model.gameLevel.skillPoints + model.metatype.skillPointsModifier)
+            , Warnings.View.ampPointsToSpendHtml model.selectedAmps model.gameLevel.ampsPoints model.weirdness
+            , Warnings.View.skillDoesNotFitWeirdnessWarning model.selectedSkills model.weirdness
+            , Warnings.View.skillPointsValidHtml model.selectedSkills
+            , Warnings.View.skillSpecsValidHtml model.selectedSkills
             ]
         ]
 
