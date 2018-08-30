@@ -5,20 +5,15 @@
     font-size: smaller;
 }
 
-canvas {
-	border: 2px rgb(255, 47, 47) dashed;
-	/* position: absolute; */
-
-}
 body > div.A4 {
-	border: 2px rgb(2, 110, 2) dashed;
+	/* border: 2px rgb(2, 110, 2) dashed; */
 	width: 1224px !important;
 	padding: 0;
 	margin: 0;
-}
+}/* 
 body  {
 	border: 2px rgb(144, 47, 255) dashed;
-}
+} */
 /* @page {
 	size: A4; /* DIN A4 standard, Europe *
 	margin: 0;
@@ -87,11 +82,27 @@ div.skills {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 10px;
+	font-weight: bold;
+	padding: 32px 47px 0 70px;
 }
+
+div.skills > div.col-4 > div > div.selectize__container {
+	height: 24px !important; /* was 36px */
+}
+div.skills > div.col-4 > div > div.selectize__container > div > .selectize__textfield {
+	padding: 1px 8px !important;
+	height: 24px !important; /* was 35px */
+}
+div.skills > div.col-4 > div > div.selectize__container > div > div > div > div.selectize__menu-toggle {
+	height: 23px !important; /* was 35px */
+}
+div.skills > div.col-4 > div > div.selectize__container > div > div > div > div.selectize__menu-toggle > i.material-icons {
+	font-size: 20px !important;	
+}
+
 div.skills > div.col-4 {
-    height: 75px;
+    height: 62px;
     display: absolute;
 }
 .negative-value-invalid {
@@ -142,7 +153,6 @@ div.skills > div.col-4 > div.skill-attribute {
 }
 div.attributeRow {
 	padding: 50px 40px 30px 260px;
-	border: 2px dashed magenta;
 }
 @media print {
 	input {
@@ -151,7 +161,7 @@ div.attributeRow {
 	}
 }
 .dispositions {
-    height: 125px;
+    padding: 48px 10px 20px 30px;
 }
 .attributes {
     /* margin: 20px 10px 30px 10px; */
