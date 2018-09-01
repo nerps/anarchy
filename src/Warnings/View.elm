@@ -1,6 +1,6 @@
 module Warnings.View exposing (..)
 
-import Html exposing (Html, div, text, program, button, label, input, fieldset)
+import Html exposing (Html, div, span, text, program, button, label, input, fieldset)
 import Html.Attributes exposing (id, type_, for, value, class, form, placeholder, style, name, checked, readonly)
 import Dict
 import Messages exposing (..)
@@ -67,10 +67,10 @@ skillDoesNotFitWeirdnessWarning selectedSkills weirdness =
         warningAwakened =
             case hasAwakenedSkill && weirdness /= Awakened of
                 True ->
-                    div [] [ text "Do not use magic skills for non-awakened characters. Check the Awakened box on the top right." ]
+                    div [ class "negative-value-invalid" ] [ text "Do not use magic skills for non-awakened characters. Check the Awakened box on the top right." ]
 
                 False ->
-                    div [] []
+                    span [] []
 
         isEmergedSkill : Maybe Skill -> Bool
         isEmergedSkill maybeSkill =
@@ -89,12 +89,14 @@ skillDoesNotFitWeirdnessWarning selectedSkills weirdness =
         warningEmerged =
             case hasEmergedSkill && weirdness /= Emerged of
                 True ->
-                    div [] [ text "Do not use technomancer skills for non-technomancers. Check the Emerged box on the top right." ]
+                    div [ class "negative-value-invalid" ] [ text "Do not use technomancer skills for non-technomancers. Check the Emerged box on the top right." ]
 
                 False ->
-                    div [] []
+                    span [] []
+
+        
     in
-        div [ class "negative-value-invalid" ] [ warningAwakened, warningEmerged ]
+        span [] [ warningAwakened, warningEmerged ]
 
 
 ampPointsToSpendHtml : Dict.Dict String (Maybe Amp) -> Int -> Weirdness -> Html Msg

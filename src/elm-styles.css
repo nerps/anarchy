@@ -10,73 +10,32 @@ body > div.A4 {
 	width: 1224px !important;
 	padding: 0;
 	margin: 0;
-}/* 
-body  {
-	border: 2px rgb(144, 47, 255) dashed;
-} */
-/* @page {
-	size: A4; /* DIN A4 standard, Europe *
-	margin: 0;
-} */
-/* body {
-	padding-top:15mm;
-} */
-
-@media print {
-	* {
-		-webkit-print-color-adjust: exact !important; /*Chrome, Safari */
-		color-adjust: exact !important;  /*Firefox*/
-	}
-	/* @page {
-		size: A4; /* DIN A4 standard, Europe *
-		margin: 0;
-	}
-	html, body {
-        width: 210mm;
-        height: 282mm;
-	} */
-	
-    body {
-        padding-top: 15mm;
-	}
-	body > div.A4 > div.container-fluid {
-		background-position-y: -8px !important;
-	}
-
-    div.selectize__menu {
-        display: none;
-    }
-    div.selectize__menu-toggle {
-        display: none;
-    }
-    input.selectize__textfield--no-selection {
-        display: none;
-	}
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
 }
-
+body > div.A4 > div.container-fluid {
+	height: 1730px !important;
+	background-repeat: no-repeat !important;
+}
+@media print {
+	body > div.A4 > div.container-fluid {
+		height: 1530px !important; /*height of the PDF template*/
+	}
+}
 input::-moz-selection {
     color: white;
     background: lightgray;
     -webkit-text-stroke: 2px white;
     -webkit-text-fill-color: white;
 }
-  
 input::selection {
     color: white;
     background: lightgray;
     -webkit-text-stroke: 2px white;
     -webkit-text-fill-color: white;
 }
-
 div.row {
     flex-direction: row;
     display: flex;
 }
-
 div.col {
     flex-direction: column;
     display: flex;
@@ -89,7 +48,11 @@ div.skills {
 	font-weight: bold;
 	padding: 32px 47px 0 70px;
 }
-
+@media print {
+	div.skills {
+		padding: 36px 47px 0 70px;
+	}
+}
 div.skills > div.col-4 > div > div.selectize__container {
 	height: 24px !important; /* was 36px */
 }
@@ -118,12 +81,12 @@ div.skills > div.col-4 {
     background-color: white;
 }
 div.skills > div.col-4 > div.skill-select {
-    width: 230px;
+    width: 225px;
     float: left;
 }
 div.skills > div.col-4 > div.skill-points {
     margin: 5px 1px 0px 3px;
-    width: 40px;
+    width: 35px;
     float: left;
 }
 div.skills > div.col-4 > div.skill-points > input {
@@ -171,7 +134,9 @@ div.attributeRow {
 	width: 100%;
 }
 .dispositionInputContainer {
-	padding: 0 2em .2em 2em;
+	padding: 0 0 5px 0;
+	/* background: transparent !important; */
+
 }
 .attributes {
     /* margin: 20px 10px 30px 10px; */
@@ -197,28 +162,50 @@ div.attributeRow {
 .attributeinputInvalid > input {
 	background-color: rgb(255, 52, 93);
 }
-.amps {
-	padding-top: 20px;
+div.amps {
+	padding-top: 16px;
 }
-.essence {
+@media print {
+	div.amps {
+		padding-top: 20px;
+	}
+}
+div.essence {
 	display: inline;
 	font-size: 1.8em;
 	font-weight: bold;
 	color: white;
 	padding-left: 540px;
 }
-.essenceeffects {
+div.essenceeffects {
 	display: inline;
 	padding-left: 30px;
 }
-.ampsrow {
+div.ampsrow {
 	padding: 2px 19px 0 34px;
 }
-.myContainer > .config {
+div.container-fluid > div.config {
     position: fixed;
-    width: 250px;
-    background-color: lightgoldenrodyellow;
-    z-index: 999;
+    top: 0;
+    left: 1224px;
+    padding: 15px;
+    border: 2px solid #444;
+    margin: 5px;
+    border-radius: 8px;
+}
+div.container-fluid > div.config div {
+    padding: 3px;
+    border-radius: 5px;
+	margin: 3px 0;
+}
+div.config-no-elm {
+	position: fixed;
+    bottom: 0;
+    left: 1224px;
+    padding: 15px;
+    border: 2px solid #444;
+    margin: 5px;
+    border-radius: 8px;
 }
 .ampButton {
     /* border: 2px solid #111;
@@ -258,7 +245,15 @@ div.cues > div {
 	/* padding-bottom: 1px; */
 }
 div.qualities {
-	padding: 50px 60px 0 73px;
+	position: absolute;
+    top: 1000px;
+    padding: 0 60px 0 73px;
+    width: 1224px;
+}
+@media print {
+	div.qualities {
+		top: 1060px;
+	}
 }
 .qualityButton {
     /* border: 2px solid #111;
@@ -278,4 +273,32 @@ div.qualities {
 }
 .qualityButton > div > div {
 	text-align: center;
+}
+@media print {
+	* {
+		-webkit-print-color-adjust: exact !important; /*Chrome, Safari */
+		color-adjust: exact !important;  /*Firefox*/
+	}
+	
+	
+    body {
+        padding-top: 15mm;
+	}
+	/* body > div.A4 > div.container-fluid {
+		background-position-y: -8px !important;
+	} */
+
+    div.selectize__menu {
+        display: none;
+    }
+    div.selectize__menu-toggle {
+        display: none;
+    }
+    input.selectize__textfield--no-selection {
+        display: none;
+	}
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
 }
