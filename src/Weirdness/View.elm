@@ -18,25 +18,21 @@ weirdnessInput weirdness =
                 False ->
                     w
     in
-        div [ class "col" ]
-            [ label []
-                [ input
-                    [ type_ "checkbox"
-                    , readonly True
-                    , checked (weirdness == Emerged)
-                    , onClick (OnWeirdnessChanged (toggleWeirdness Emerged (weirdness == Emerged)))
-                    ]
-                    []
-                , text "Emerged"
+        div [ class "weirdness" ]
+            [ input
+                [ type_ "checkbox"
+                , readonly True
+                , checked (weirdness == Emerged)
+                , onClick (OnWeirdnessChanged (toggleWeirdness Emerged (weirdness == Emerged)))
+                , class "emerged"
                 ]
-            , label []
-                [ input
-                    [ type_ "checkbox"
-                    , readonly True
-                    , checked (weirdness == Awakened)
-                    , onClick (OnWeirdnessChanged (toggleWeirdness Awakened (weirdness == Awakened)))
-                    ]
-                    []
-                , text "Awakened"
+                []
+            , input
+                [ type_ "checkbox"
+                , readonly True
+                , checked (weirdness == Awakened)
+                , onClick (OnWeirdnessChanged (toggleWeirdness Awakened (weirdness == Awakened)))
+                , class "awakened"
                 ]
+                []
             ]

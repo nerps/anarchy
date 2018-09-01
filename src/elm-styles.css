@@ -32,6 +32,32 @@ div.col {
     flex-direction: column;
     display: flex;
 }
+.nameinput {
+    margin: 3px 0 10px 299px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    height: 60px;
+    width: 550px;
+}
+div.weirdness {
+	position: absolute;
+    top: 20px;
+    left: 1099px;
+}
+@media print {
+	div.weirdness {
+		top: 78px;
+	}
+}
+div.weirdness > input.emerged {
+	
+}
+div.weirdness > input.awakened {
+	top: 34px;
+    position: absolute;
+    left: 0;
+}
 div.skills {
     display: flex;
     flex-direction: row;
@@ -58,7 +84,6 @@ div.skills > div.col-4 > div > div.selectize__container > div > div > div > div.
 div.skills > div.col-4 > div > div.selectize__container > div > div > div > div.selectize__menu-toggle > i.material-icons {
 	font-size: 20px !important;	
 }
-
 div.skills > div.col-4 {
     height: 62px;
     display: absolute;
@@ -97,17 +122,6 @@ div.skills > div.col-4 > div.skill-attribute {
     font-size: 35px;
     -webkit-text-stroke: 2px #000000;
     -webkit-text-fill-color: #FFFFFF;
-}
-.nextToConfig {
-    padding-left: 250px;
-}
-.nameinput {
-    margin: 3px 50px 10px 20px;
-    text-align: center;
-    font-size: 55px;
-    font-weight: bold;
-    height: 60px;
-    width: 550px;
 }
 div.attributeRow {
 	padding: 50px 40px 30px 260px;

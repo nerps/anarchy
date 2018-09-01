@@ -36,8 +36,8 @@ view model =
             model.selectedQualities
             model.selectizeMenuQuality
             model.weirdness
-        
-        , div [ class "row", class "nextToConfig" ] [ div [ class "col" ] [ nameInput model.name ], div [ class "col" ] [ Weirdness.View.weirdnessInput model.weirdness ] ]
+        , div [ class "name-input" ] [ nameInput model.name ]
+        , Weirdness.View.weirdnessInput model.weirdness
         , div [ class "row", class "attributeRow", class "attributes" ]
             (Attributes.View.attributeInputs
                 model.metatype.attributeMaxima

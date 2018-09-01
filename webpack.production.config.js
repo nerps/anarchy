@@ -1,26 +1,17 @@
-//var webpack = require('webpack');
 var path = require("path");
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: {
 		app: [
 			'./src/index.js'
 		]
 	},
-
 	output: {
 		path: path.resolve(__dirname + '/dist'),
 		filename: '[name].js',
 		publicPath: '/',
 		//contentBase: path.resolve(__dirname + '/src')
-	},
-	/*plugins: [
-		new webpack.HotModuleReplacementPlugin()//,
-	],*/
-	devServer: {
-		inline: true,
-		stats: 'errors-only'
 	},
 	module: {
 		rules: [
@@ -50,10 +41,10 @@ module.exports = {
 				use: {				
 					loader: 'elm-webpack-loader',
 					options: {
-						debug: true,
-						warn: true,
+						debug: false,
+						warn: false,
 						verbose: true,
-						forceWatch: true,
+						forceWatch: false,
 					},
 				},
 			},
