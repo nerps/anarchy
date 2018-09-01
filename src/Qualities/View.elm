@@ -21,11 +21,7 @@ view selectedQualities =
         views =
             selectedQualities |> Dict.toList |> List.map (\( k, v ) -> buttonView k v)
     in
-        div []
-            [ div [] [ text "QUALITIES" ]
-            , div [ class "row" ]
-                views
-            ]
+        div [ class "row qualities" ] views
 
 
 buttonView : String -> Maybe Quality -> Html Msg
@@ -42,20 +38,10 @@ buttonView uid_quality maybeQuality =
                 Nothing ->
                     div [ style [ ( "font-style", "italic" ), ( "flex", "1 0 auto" ) ] ] [ text "Select a quality" ]
 
-        isNegativeQuality =
-            String.endsWith "n" uid_quality
-
-        dashedBorderStyle =
-            case isNegativeQuality of
-                True ->
-                    [ ( "border-style", "dashed" ) ]
-
-                False ->
-                    []
     in
         div
             [ class "col-12 col-xs-12 col-sm-6 col-md-4 col-lg-4" ]
-            [ div [ class "ampButton", onClick <| QualityModalMsg uid_quality Modal.visibleState, style dashedBorderStyle ] [ qualityText ] ]
+            [ div [ class "qualityButton", onClick <| QualityModalMsg uid_quality Modal.visibleState  ] [ qualityText ] ]
 
 
 modalView : String -> Modal.State -> Dict.Dict String (Maybe Quality) -> Selectize.State Quality -> Weirdness -> Html Msg

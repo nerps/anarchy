@@ -15,7 +15,4 @@ view cues =
                 |> Dict.toList
                 |> List.map (\( k, v ) -> div [ class "col-6 dispositionInputContainer" ] [ input [ type_ "text", onInput (OnCueInputChanged k), value v, class "dispositionInput" ] [] ])
     in
-        div []
-            [ div [ style [ ( "text-align", "center" ) ] ] [ text "Cues" ]
-            , div [ class "row" ] inputs
-            ]
+        div [ class "row cues" ] inputs

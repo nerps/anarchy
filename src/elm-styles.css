@@ -35,10 +35,13 @@ body  {
         width: 210mm;
         height: 282mm;
 	} */
-	/*
+	
     body {
         padding-top: 15mm;
-    } */
+	}
+	body > div.A4 > div.container-fluid {
+		background-position-y: -8px !important;
+	}
 
     div.selectize__menu {
         display: none;
@@ -161,7 +164,14 @@ div.attributeRow {
 	}
 }
 .dispositions {
-    padding: 48px 10px 20px 30px;
+    padding: 43px 10px 20px 30px;
+}
+.dispositionInput {
+	text-align: center;
+	width: 100%;
+}
+.dispositionInputContainer {
+	padding: 0 2em .2em 2em;
 }
 .attributes {
     /* margin: 20px 10px 30px 10px; */
@@ -187,6 +197,23 @@ div.attributeRow {
 .attributeinputInvalid > input {
 	background-color: rgb(255, 52, 93);
 }
+.amps {
+	padding-top: 20px;
+}
+.essence {
+	display: inline;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: white;
+	padding-left: 540px;
+}
+.essenceeffects {
+	display: inline;
+	padding-left: 30px;
+}
+.ampsrow {
+	padding: 2px 19px 0 34px;
+}
 .myContainer > .config {
     position: fixed;
     width: 250px;
@@ -194,14 +221,15 @@ div.attributeRow {
     z-index: 999;
 }
 .ampButton {
-    border: 2px solid #111;
-	border-radius: 5px;
+    /* border: 2px solid #111;
+	border-radius: 5px; */
 	font-size: smaller;
 	/* background-color: white; */
-	padding: 5px;
-	margin: 3px 0 3px 0;
+	padding: 0 5px;
+	/* margin: 3px 0 3px 0; */
 	align-items: center;
-	min-height: 6.3em;
+	/* min-height: 6.3em; */
+	height: 81px;
 	display: flex;
 }
 .ampButton > div {
@@ -211,22 +239,43 @@ div.attributeRow {
 	text-align: center;
 }
 .ampPoints {
-	border: 2px solid #111;
-	border-radius: 5px;
-	background-color: white;
-	padding: 0.1em 0.1em 0.1em 0.1em;
+	/* border: 2px solid #111;
+	border-radius: 5px; */
+	/* background-color: white;
+	padding: 0.1em 0.1em 0.1em 0.1em; */
 	margin: 0 0 0 -1.5em;
 	width: 2em;
-	height: 2em;
+	/* height: 2em; */
 	align-items: center;
 	text-align: center;
 	font-weight: bolder;
 	flex: 0 0 auto;
 }
-.dispositionInput {
-	text-align: center;
-	width: 100%;
+div.cues {
+	padding: 63px 20px 0 40px;
 }
-.dispositionInputContainer {
-	padding: 0 2em .2em 2em;
+div.cues > div {
+	/* padding-bottom: 1px; */
+}
+div.qualities {
+	padding: 50px 60px 0 73px;
+}
+.qualityButton {
+    /* border: 2px solid #111;
+	border-radius: 5px; */
+	font-size: smaller;
+	/* background-color: white; */
+	padding: 0 5px;
+	/* margin: 3px 0 3px 0; */
+	align-items: center;
+	/* min-height: 6.3em; */
+	height: 60px;
+	display: flex;
+	line-height: 1.1em;
+}
+.qualityButton > div {
+	text-align: center;
+}
+.qualityButton > div > div {
+	text-align: center;
 }

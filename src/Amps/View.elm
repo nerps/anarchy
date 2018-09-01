@@ -56,10 +56,12 @@ view selectedAmps qualities =
                                         False ->
                                             "He's dead, Jim."
     in
-        div []
-            [ div [] [ text ("Essence: " ++ toString essenceLeft) ]
-            , div [] [ text essenceEffects ]
-            , div [ class "row equal" ] views
+        div [ class "amps" ]
+            [  div [] [
+                div [ class "essence"] [ text (toString essenceLeft) ]
+                , div [ class "essenceeffects" ] [ text essenceEffects ]
+                ]
+            , div [ class "row equal ampsrow" ] views
             ]
 
 
