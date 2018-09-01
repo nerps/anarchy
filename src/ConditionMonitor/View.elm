@@ -1,7 +1,8 @@
 module ConditionMonitor.View exposing (conditionMonitorPhysical, conditionMonitorStun)
 
 import Attributes.Types exposing (..)
-import Html exposing (Html, div, text, label, input)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 import Messages exposing (Msg)
 import Dict
 import List
@@ -29,7 +30,7 @@ conditionMonitorPhysical attributes attributeModifiers qualities =
                 |> List.map (Maybe.withDefault 0)
                 |> List.sum
     in
-        text (toString value)
+        div [ class "condition-monitor-physical" ] [ text (toString value) ]
 
 
 conditionMonitorStun : Attributes -> Attributes -> Dict.Dict String (Maybe Quality) -> Html Msg
@@ -53,4 +54,4 @@ conditionMonitorStun attributes attributeModifiers qualities =
                 |> List.map (Maybe.withDefault 0)
                 |> List.sum
     in
-        text (toString value)
+        div [ class "condition-monitor-stun" ] [ text (toString value) ]

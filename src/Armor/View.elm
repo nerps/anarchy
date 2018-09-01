@@ -4,9 +4,10 @@ import Metatypes.Types exposing (..)
 import Skills.Types exposing (Skill, SkillSpec)
 import Dict
 import List
-import Html exposing (Html, div, text, label, input)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 import Messages exposing (Msg)
-
+import Debug
 
 view : Metatype -> Dict.Dict String ( Maybe Skill, Maybe SkillSpec, Int ) -> Int -> Html Msg
 view metatype selectedSkills skillPoints =
@@ -43,10 +44,10 @@ view metatype selectedSkills skillPoints =
                         False ->
                             ( 0, "" )
 
+        _ =
+            Debug.log "strSkillArmor" strSkillArmor
         iArmor =
             iMetatypeArmor + 9 + iSkillArmor
     in
-        div []
-            [ div [] [ text <| toString iArmor ]
-            , div [] [ text strSkillArmor ]
-            ]
+        div [ class "armor" ] [ text <| toString iArmor ]
+        

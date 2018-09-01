@@ -61,15 +61,10 @@ view model =
         , Amps.View.view model.selectedAmps model.selectedQualities
         , Cues.View.view model.cues
         , Qualities.View.view model.selectedQualities
-        , div [ class "row" ]
-            [ div [ class "col" ] [ text "ARMOR", Armor.View.view model.metatype model.selectedSkills (model.gameLevel.skillPoints + model.metatype.skillPointsModifier) ]
-            , div [ class "col" ]
-                [ text "CONDITION MONITORS"
-                , ConditionMonitor.View.conditionMonitorPhysical model.attributes model.metatype.attributeModifiers model.selectedQualities
-                , ConditionMonitor.View.conditionMonitorStun model.attributes model.metatype.attributeModifiers model.selectedQualities
-                ]
-            , div [ class "col" ] [ text "GEAR/CONTACTS" ]
-            ]
+        , Armor.View.view model.metatype model.selectedSkills (model.gameLevel.skillPoints + model.metatype.skillPointsModifier)
+        , ConditionMonitor.View.conditionMonitorPhysical model.attributes model.metatype.attributeModifiers model.selectedQualities
+        , ConditionMonitor.View.conditionMonitorStun model.attributes model.metatype.attributeModifiers model.selectedQualities
+        , div [   ] [ text "GEAR/CONTACTS" ]
         , div [ class "config no-print" ]
             [ GameLevel.View.view model.gameLevel
             , Metatypes.View.metatypeChooser model.metatype

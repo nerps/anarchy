@@ -1,12 +1,4 @@
-.myContainer {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Arial Narrow Bold', sans-serif;
-    font-size: smaller;
-}
-
 body > div.A4 {
-	/* border: 2px rgb(2, 110, 2) dashed; */
 	width: 1224px !important;
 	padding: 0;
 	margin: 0;
@@ -273,6 +265,47 @@ div.qualities {
 }
 .qualityButton > div > div {
 	text-align: center;
+}
+div.armor {
+	position: absolute;
+    left: 240px;
+    top: 1308px;
+    font-size: 33px;
+    font-weight: bolder;
+    /* color: white; */
+    -webkit-text-stroke: 2px #000000;
+    -webkit-text-fill-color: #FFFFFF;
+}
+@media print {
+	div.armor {
+		top: 1366px;
+	}
+}
+div.condition-monitor-physical {
+	position: absolute;
+    left: 460px;
+    top: 1318px;
+    font-size: 23px;
+    font-weight: bolder;
+    color: white;
+}
+@media print {
+	div.condition-monitor-physical {
+		top: 1376px;
+	}
+}
+div.condition-monitor-stun {
+	position: absolute;
+    left: 655px;
+    top: 1318px;
+    font-size: 23px;
+    font-weight: bolder;
+    color: white;
+}
+@media print {
+	div.condition-monitor-stun {
+		top: 1376px;
+	}
 }
 @media print {
 	* {
