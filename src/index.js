@@ -36,6 +36,7 @@ function loadPageAsBackground(pdfDocument, page) {
 		return renderTask.promise;
 	}).then(function () {
 		var dataUrl = canvas.toDataURL();
+		window.localStorage.backgroundImageDataUrl = dataUrl;
 		var div = document.getElementsByClassName('container-fluid')[0];
 		div.style.background = 'url('+dataUrl+')';
 		return;
@@ -43,13 +44,13 @@ function loadPageAsBackground(pdfDocument, page) {
 		console.error('Error: ' + reason);
 	});
 }
-
+/* 
 var DEBUG_PDF = './Shadowrun_Anarchy.pdf';
 var loadingTask = pdfjsLib.getDocument(DEBUG_PDF);
 loadingTask.promise.then(function (pdfDocument) {
 	var pageNumber = getPageNumber();
 	loadPageAsBackground(pdfDocument, pageNumber);
-});
+}); */
 
 function readPDF(e) {
 	var file = e.target.files[0];
@@ -78,3 +79,14 @@ mountNode.children[0].remove();
 
 // .embed() can take an optional second argument. This would be an object describing the data we need to start a program, i.e. a userID or some token
 var app = Elm.Main.embed(mountNode);
+
+/** load (recent) background image from web storage */
+if (window.localStorage.backgroundImageDataUrl != undefined) {
+	var interval = setInterval(function () {
+		var div = document.getElementsByClassName('container-fluid')[0];
+		if (div != undefined) {
+			div.style.background = 'url('+window.localStorage.backgroundImageDataUrl+')';
+			clearImmediate(interval);
+		}
+	}, 55);
+}
