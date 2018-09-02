@@ -189,6 +189,7 @@ div.essenceeffects {
 }
 div.ampsrow {
 	padding: 2px 19px 0 34px;
+	line-height: 1em;
 }
 div.container-fluid > div.config {
     position: fixed;
