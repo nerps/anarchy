@@ -1,11 +1,14 @@
 # NERPS anarchy
 A simple character sheet for Shadowrun Anarchy. Very inoffical and with lots of house rules. Create a character and share the link with your game master :)
 
-This is a beta version. Please contribute!
+New feature: load your own Shadowrun_Anarchy.pdf! The website will read the template on page 216 and set it as a background.
+
+This is a beta version. It works well only on Google Chrome (especially print layout breaks in Firefox). Please contribute!
 
 ### TODO
 
-I want to make this thing look pretty. Maybe add some character advancement. And I want to make print-outs fit on the template from the SRA book (which I can not provide -- go buy the book or the pdf). 
+* Add a table to track karma.
+* waiting for requests :)
 
 ### References
 
